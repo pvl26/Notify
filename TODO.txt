@@ -19,7 +19,9 @@
 
         TODO:
 
-            Make a top bar menu thingie    
+            Make a top bar menu thingie for custom notifications 
+
+            ex: set a notification for 45 mins when the cookies are done  
 
 
 ###############################################################################
