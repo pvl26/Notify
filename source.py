@@ -16,3 +16,4 @@ while True:
 
     time.sleep(20)    
 
+Notify.uninit("Test")
