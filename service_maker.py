@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-#  pare ca "lumea" zice sa folosesti subprocess in loc de os
+#  pare ca "lumea" zice ca e mai bun subprocess in loc de os
 import os
 
 def main():
@@ -22,8 +22,15 @@ def main():
     #  move sevice_source.py to /usr/local/lib/notifyapp
     os.rename("service_source.py", "/usr/local/lib/notifyapp/service_source.py")
  
-    command = "echo '[Service]\nExecStart=/usr/local/lib/notifyapp/service_source.py\n' > notifyapp.service"
+    #  fill notifyapp.service
+    command = "echo '[Unit]\nDescription=Notification app\n\n[Service]\nExecStart=/usr/local/lib/notifyapp/service_source.py\n' > notifyapp.service"
     os.system(command)
+
+    #  move notifyapp.service to /etc/systemd/system
+    os.rename("notifyapp.service", "/etc/systemd/system/notifyapp.service")
+
+    #  start notifyapp
+    # os.system("systemctl start notifyapp")
 
 if __name__ == "__main__":
     main() 
