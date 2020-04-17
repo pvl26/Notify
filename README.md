@@ -12,3 +12,12 @@
         sudo ./service_maker.py       #  run without sudo to see what happens
 
     WARNING: the process won't stop, you need to forcefully kill it for now
+
+
+    For debugging:
+
+        ./clean.sh 
+        sudo ./service_maker.py 
+        sudo systemctl daemon-reload 
+        sudo systemctl start notifyapp
+        sudo systemctl status notifyapp
