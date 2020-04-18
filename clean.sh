@@ -1,4 +1,5 @@
 #!/bin/bash
+sudo systemctl stop notifyapp
 
 sudo rm /etc/systemd/system/notifyapp.service 
 
