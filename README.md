@@ -15,8 +15,10 @@
 
     For debugging:
     
-        ./clean.sh 
-        sudo ./service_maker.py 
+        ./clean.sh      #  sterge serviciul si toate fisierele generate pentru el
+        sudo ./service_maker.py     
+        
         sudo systemctl daemon-reload 
-        sudo systemctl start notifyapp
-        sudo systemctl status notifyapp
+        sudo systemctl start notifyapp.service
+        sudo systemctl status notifyapp.service
+        
