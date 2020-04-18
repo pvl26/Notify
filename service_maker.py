@@ -23,7 +23,7 @@ def main():
     os.rename("service_source.py", "/usr/local/lib/notifyapp/service_source.py")
  
     #  fill notifyapp.service
-    command = "echo '[Unit]\nDescription=Notification app\n\n[Service]\nExecStart=/usr/local/lib/notifyapp/service_source.py\n' > notifyapp.service"
+    command = "echo '[Unit]\nDescription=Notification app\n\n[Service]\nEnvironment=PYTHONUNBUFFERED=1\nExecStart=/usr/local/lib/notifyapp/service_source.py\n' > notifyapp.service"
     os.system(command)
 
     #  move notifyapp.service to /etc/systemd/system

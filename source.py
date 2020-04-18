@@ -11,8 +11,9 @@ def main():
     
     while True:
 
-        os.system("echo ceva >> /home/$USER/Desktop/test.txt")
-    
+        # os.system("echo ceva >> /home/$USER/Desktop/test.txt")
+        print("ceva")
+        
     #    notification = Notify.Notification.new(
     #        "Notificarea ta din 20 in 20 de secunde", 
     #        "┗(＾0＾)┓"   
