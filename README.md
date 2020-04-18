@@ -14,7 +14,8 @@
 
 
     For debugging:
-
+    
+        sudo systemctl stop notifyapp
         ./clean.sh 
         sudo ./service_maker.py 
         sudo systemctl daemon-reload 
