@@ -23,11 +23,14 @@ def main():
     os.rename("service_source.py", "/usr/local/lib/notifyapp/service_source.py")
  
     #  fill notifyapp.service
-    command = "echo '[Unit]\nDescription=Notification app\n\n[Service]\nEnvironment=PYTHONUNBUFFERED=1\nExecStart=/usr/local/lib/notifyapp/service_source.py\n' > notifyapp.service"
+    command = "echo '[Unit]\nDescription=Notification app\n\n[Service]\nEnvironment=PYTHONUNBUFFERED=1\nEnvironment=\nExecStart=/usr/local/lib/notifyapp/service_source.py\n' > notifyapp.service"
     os.system(command)
 
     #  move notifyapp.service to /etc/systemd/system
     os.rename("notifyapp.service", "/etc/systemd/system/notifyapp.service")
+
+    #  test command
+    os.system("systemctl import-environment DISPLAY WAYLAND_DISPLAY")
 
     #  start notifyapp
     os.system("systemctl start notifyapp")
