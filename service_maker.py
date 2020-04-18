@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-#  pare ca "lumea" zice ca e mai bun subprocess in loc de os
+#  note: pare ca "lumea" zice ca e mai bun subprocess in loc de os
 import os
 
 def main():

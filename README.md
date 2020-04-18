@@ -4,7 +4,6 @@
 
         sudo apt install python-gi                 #for gi package
         sudo apt install gir1.2-notify-0.7         #for notify library
-        sudo apt-get install python3-pydbus        #e nevoie de el pentru a trimite notificari de la serviciu
 
     How to create the service:
 
@@ -15,7 +14,7 @@
 
 
     For debugging:
-
+    
         ./clean.sh 
         sudo ./service_maker.py 
         sudo systemctl daemon-reload 
