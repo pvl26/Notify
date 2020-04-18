@@ -30,7 +30,7 @@ def main():
     os.rename("notifyapp.service", "/etc/systemd/system/notifyapp.service")
 
     #  start notifyapp
-    # os.system("systemctl start notifyapp")
+    os.system("systemctl start notifyapp")
 
 if __name__ == "__main__":
     main() 
