@@ -10,6 +10,7 @@ gi.require_version('Notify', '0.7')
 from gi.repository import Notify
 import os
 import time
+from multiprocessing import Process
 
 class Culture:
     # method to clear input_str of nested parentheses with stuff in between them
@@ -92,8 +93,8 @@ class Culture:
 
 def getCultureNotification():
     #  choose randomly the notification type
-    # choice = random.choice([0, 1])
-    choice = 2
+    choice = random.choice([0, 1, 2])
+    # choice = 2
     if choice == 0 :
         return Culture().getMusic()
     if choice == 1 :
@@ -120,48 +121,63 @@ class Health:
         self.info = "You shouldn't spend more than an hour on the chair!"
         return self
 
-def main():
+#  Health_Water notification module
+def Health_Water():
     Notify.init("Test")
+
+    while True:
+        time.sleep(10)  # sleep for 1800 seconds
+
+        content = Health().Water()
+        notification = Notify.Notification.new(
+            content.type,
+            content.info
+        )
+        notification.set_urgency(0)
+        notification.show()
     
-    #  Health_Water module
-    # while True:
-    #     time.sleep(10)  # sleep for 1800 seconds
+    Notify.uninit("Test")
 
-    #     content = Health().Water()
-    #     notification = Notify.Notification.new(
-    #         content.type,
-    #         content.info
-    #     )
-    #     notification.set_urgency(0)
-    #     notification.show()
+#  Health_Fruit notification module
+def Health_Fruit():
+    Notify.init("Test")
 
-    #  Health_Fruit module
-    # while True:
-    #     time.sleep(10)  # sleep for 1800 seconds
+    while True:
+        time.sleep(22)  # sleep for 5400 seconds
 
-    #     content = Health().Fruit()
-    #     notification = Notify.Notification.new(
-    #         content.type,
-    #         content.info
-    #     )
-    #     notification.set_urgency(0)
-    #     notification.show()
+        content = Health().Fruit()
+        notification = Notify.Notification.new(
+            content.type,
+            content.info
+        )
+        notification.set_urgency(0)
+        notification.show()
 
-    #  Health_Pause module
-    # while True:
-    #     time.sleep(10)  # sleep for 1800 seconds
+    Notify.uninit("Test")
 
-    #     content = Health().Pause()
-    #     notification = Notify.Notification.new(
-    #         content.type,
-    #         content.info
-    #     )
-    #     notification.set_urgency(0)
-    #     notification.show()
+#  Health_Pause notification module
+def Health_Pause():
+    Notify.init("Test")
 
-    #  Culture notification module
+    while True:
+        time.sleep(47)  # sleep for 3600 seconds
+
+        content = Health().Pause()
+        notification = Notify.Notification.new(
+            content.type,
+            content.info
+        )
+        notification.set_urgency(0)
+        notification.show()
+
+    Notify.uninit("Test")
+
+#  Culture notification module
+def Culture_notification():
+    Notify.init("Test")
+
     while True:   
-        time.sleep(5)  # sleep for 5400 seconds
+        time.sleep(55)  # sleep for 10000 seconds
 
         content = getCultureNotification()
         notification = Notify.Notification.new(
@@ -169,10 +185,32 @@ def main():
             content.info
         )
         notification.set_urgency(0)
-        notification.show() 
-        
+        notification.show()
 
     Notify.uninit("Test")
+
+
+def main():
+
+    H_W = Process(target=Health_Water)
+    H_W.start()
+    
+    H_F = Process(target=Health_Fruit)
+    H_F.start()
+    
+    H_P = Process(target=Health_Pause)
+    H_P.start()
+
+    C = Process(target=Culture_notification)
+    C.start()
+
+    H_W.join()
+    H_F.join()
+    H_P.join()
+    C.join()
+
+
+
 
 if __name__ == "__main__":
     main()
