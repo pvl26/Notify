@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+import re
 import random
 import requests
 import bs4
@@ -11,6 +12,24 @@ import os
 import time
 
 class Culture:
+    # method to clear input_str of nested parentheses with stuff in between them
+    def clearContent(self, input_str):
+        ret = ''
+        skip1c = 0
+        skip2c = 0
+        for i in input_str:
+            if i == '[':
+                skip1c += 1
+            elif i == '(':
+                skip2c += 1
+            elif i == ']' and skip1c > 0:
+                skip1c -= 1
+            elif i == ')'and skip2c > 0:
+                skip2c -= 1
+            elif skip1c == 0 and skip2c == 0:
+                ret += i
+        return ret
+
     def getMusic(self):
         self.type = "Music curiosities:"
 
@@ -24,6 +43,7 @@ class Culture:
 
         #  get the content to put in the notification
         content = bs.p.text
+        content = self.clearContent(content)
 
         self.info = content
         return self
@@ -41,13 +61,15 @@ class Culture:
 
         # get the content to put in the notification
         content = bs.p.text
-        
+        content = self.clearContent(content)
+
         self.info = content
         return self
 
 def getCultureNotification():
     #  choose randomly the notification type
     choice = random.choice([0, 1])
+    # choice = 1
     if choice == 0 :
         return Culture().getMusic()
     if choice == 1 :
@@ -100,28 +122,28 @@ def main():
     #     notification.show()
 
     #  Health_Pause module
-    while True:
-        time.sleep(10)  # sleep for 1800 seconds
+    # while True:
+    #     time.sleep(10)  # sleep for 1800 seconds
 
-        content = Health().Pause()
-        notification = Notify.Notification.new(
-            content.type,
-            content.info
-        )
-        notification.set_urgency(0)
-        notification.show()
-
-    #  Culture notification module
-    # while True:   
-    #     time.sleep(10)  # sleep for 5400 seconds
-
-    #     content = getCultureNotification()
+    #     content = Health().Pause()
     #     notification = Notify.Notification.new(
     #         content.type,
     #         content.info
     #     )
     #     notification.set_urgency(0)
-    #     notification.show() 
+    #     notification.show()
+
+    #  Culture notification module
+    while True:   
+        time.sleep(5)  # sleep for 5400 seconds
+
+        content = getCultureNotification()
+        notification = Notify.Notification.new(
+            content.type,
+            content.info
+        )
+        notification.set_urgency(0)
+        notification.show() 
         
 
     Notify.uninit("Test")
