@@ -134,6 +134,8 @@ def Health_Water():
             content.info
         )
         notification.set_urgency(0)
+        icon = GdkPixbuf.Pixbuf.new_from_file("./Icons/water32.png")
+        notification.set_icon_from_pixbuf(icon)
         notification.show()
     
     Notify.uninit("Test")
@@ -170,6 +172,8 @@ def Health_Pause():
             content.info
         )
         notification.set_urgency(0)
+        icon = GdkPixbuf.Pixbuf.new_from_file("./Icons/pause32.png")
+        notification.set_icon_from_pixbuf(icon)
         notification.show()
 
     Notify.uninit("Test")
@@ -187,6 +191,8 @@ def Culture_notification():
             content.info
         )
         notification.set_urgency(0)
+        icon = GdkPixbuf.Pixbuf.new_from_file("./Icons/culture32.png")
+        notification.set_icon_from_pixbuf(icon)
         notification.show()
 
     Notify.uninit("Test")
