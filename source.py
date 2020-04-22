@@ -54,7 +54,7 @@ class Culture:
         self.type = "Imortant woman:"
 
         # data set for the urls used for notifications
-        data_set = ["Marie_Curie"]
+        data_set = ["Marie_Curie", "Audrey_Hepburn", "Grace_Hopper", "Katherine_Johnson", "J._K._Rowling", "Margaret_Hamilton_(om_de_știință)", "Elisa_Leonida_Zamfirescu"]
         # TO DO: add more to data_set
 
         # get a randome url source
@@ -73,8 +73,8 @@ class Culture:
 
 def getCultureNotification():
     #  choose randomly the notification type
-    choice = random.choice([0, 1])
-    # choice = 1
+    # choice = random.choice([0, 1])
+    choice = 1
     if choice == 0 :
         return Culture().getMusic()
     if choice == 1 :
