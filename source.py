@@ -7,7 +7,7 @@ import bs4
 from bs4 import BeautifulSoup
 import gi
 gi.require_version('Notify', '0.7')
-from gi.repository import Notify
+from gi.repository import Notify, GdkPixbuf
 import os
 import time
 from multiprocessing import Process
@@ -151,6 +151,8 @@ def Health_Fruit():
             content.info
         )
         notification.set_urgency(0)
+        icon = GdkPixbuf.Pixbuf.new_from_file("./Icons/fruit32.png")
+        notification.set_icon_from_pixbuf(icon)
         notification.show()
 
     Notify.uninit("Test")
