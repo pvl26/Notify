@@ -35,6 +35,7 @@ class Culture:
 
         #  data set for the urls used for notifications
         data_set = ["Nai", "Chitară", "Pian"]
+        # TO DO: add more to dataset
 
         #  get a randome url source
         url = "https://ro.wikipedia.org/wiki/" + random.choice(data_set)
@@ -53,6 +54,7 @@ class Culture:
 
         # data set for the urls used for notifications
         data_set = ["Marie_Curie"]
+        # TO DO: add more to data_set
 
         # get a randome url source
         url = "https://ro.wikipedia.org/wiki/" + random.choice(data_set)
@@ -66,6 +68,8 @@ class Culture:
         self.info = content
         return self
 
+    # TO DO: add more notification content scrapping methods
+
 def getCultureNotification():
     #  choose randomly the notification type
     choice = random.choice([0, 1])
@@ -75,7 +79,7 @@ def getCultureNotification():
     if choice == 1 :
         return Culture().getWoman()
 
-    #  TO DO: don't repeat a previous shown notification
+    #  TO DO(optional): don't repeat a previous shown notification
 
 
 class Health:
