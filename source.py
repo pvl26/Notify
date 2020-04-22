@@ -68,17 +68,38 @@ class Culture:
 
         self.info = content
         return self
+    
+    def getDestinations(self):
+        self.type = "Beautiful places:"
+
+        # data set for the urls used for notifications
+        data_set = ["Madrid", "Barcelona", "Roma", "Sankt_Petersburg", "Veneția", "Lisabona", "München", "Budapesta"]
+        # TO DO: add more to data_set
+
+        # get a randome url source
+        url = "https://ro.wikipedia.org/wiki/" + random.choice(data_set)
+        source = requests.get(url).text
+        bs = BeautifulSoup(source, "lxml")
+
+        # get the content to put in the notification
+        content = bs.p.text
+        content = self.clearContent(content)
+
+        self.info = content
+        return self
 
     # TO DO: add more notification content scrapping methods
 
 def getCultureNotification():
     #  choose randomly the notification type
     # choice = random.choice([0, 1])
-    choice = 1
+    choice = 2
     if choice == 0 :
         return Culture().getMusic()
     if choice == 1 :
         return Culture().getWoman()
+    if choice == 2 :
+        return Culture().getDestinations()
 
     #  TO DO(optional): don't repeat a previous shown notification
 
