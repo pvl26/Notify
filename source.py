@@ -13,6 +13,7 @@ import time
 
 class Culture:
     # method to clear input_str of nested parentheses with stuff in between them
+    # copyright: https://stackoverflow.com/a/14598135
     def clearContent(self, input_str):
         ret = ''
         skip1c = 0
