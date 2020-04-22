@@ -29,7 +29,17 @@ class Culture:
         return self
 
     def getWoman(self):
-        # TO DO
+        self.type = "Imortant woman:"
+        # data set for the urls used for notifications
+        data_set = ["Marie_Curie"]
+        # get a randome url source
+        url = "https://ro.wikipedia.org/wiki/" + random.choice(data_set)
+        source = requests.get(url).text
+        bs = BeautifulSoup(source, "lxml")
+        # get the content to put in the notification
+        content = bs.p.text
+        self.info = content
+        return self
 
 def getCultureNotification():
     #  choose randomly the notification type
@@ -49,10 +59,14 @@ class Health:
         return self
 
     def Fruit(self):
-        # TO DO
+        self.type = "Eat a fruit!"
+        self.info = "Take your portion of Vitamin C"
+        return self
 
     def Pause(self):
-        # TO DO
+        self.type = "Break time!"
+        self.info = "You shouldn't spend more than an hour on the chair!"
+        return self
 
 def main():
     Notify.init("Test")
@@ -70,24 +84,40 @@ def main():
     #     notification.show()
 
     #  Health_Fruit module
-    while True:
-        # TO DO
+    # while True:
+    #     time.sleep(10)  # sleep for 1800 seconds
 
-    # Health_Pause module
-    while True:
-        # TO DO
-
-    #  Culture notification module
-    # while True:   
-    #     time.sleep(5400)  # sleep for 5400 seconds
-
-    #     content = getCultureNotification()
+    #     content = Health().Fruit()
     #     notification = Notify.Notification.new(
     #         content.type,
     #         content.info
     #     )
     #     notification.set_urgency(0)
-    #     notification.show() 
+    #     notification.show()
+
+    #  Health_Pause module
+    # while True:
+    #     time.sleep(10)  # sleep for 1800 seconds
+
+    #     content = Health().Pause()
+    #     notification = Notify.Notification.new(
+    #         content.type,
+    #         content.info
+    #     )
+    #     notification.set_urgency(0)
+    #     notification.show()
+
+    #  Culture notification module
+    while True:   
+        time.sleep(10)  # sleep for 5400 seconds
+
+        content = getCultureNotification()
+        notification = Notify.Notification.new(
+            content.type,
+            content.info
+        )
+        notification.set_urgency(0)
+        notification.show() 
         
 
     Notify.uninit("Test")
