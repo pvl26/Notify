@@ -30,14 +30,18 @@ class Culture:
 
     def getWoman(self):
         self.type = "Imortant woman:"
+
         # data set for the urls used for notifications
         data_set = ["Marie_Curie"]
+
         # get a randome url source
         url = "https://ro.wikipedia.org/wiki/" + random.choice(data_set)
         source = requests.get(url).text
         bs = BeautifulSoup(source, "lxml")
+
         # get the content to put in the notification
         content = bs.p.text
+        
         self.info = content
         return self
 
@@ -96,28 +100,28 @@ def main():
     #     notification.show()
 
     #  Health_Pause module
-    # while True:
-    #     time.sleep(10)  # sleep for 1800 seconds
+    while True:
+        time.sleep(10)  # sleep for 1800 seconds
 
-    #     content = Health().Pause()
-    #     notification = Notify.Notification.new(
-    #         content.type,
-    #         content.info
-    #     )
-    #     notification.set_urgency(0)
-    #     notification.show()
-
-    #  Culture notification module
-    while True:   
-        time.sleep(10)  # sleep for 5400 seconds
-
-        content = getCultureNotification()
+        content = Health().Pause()
         notification = Notify.Notification.new(
             content.type,
             content.info
         )
         notification.set_urgency(0)
-        notification.show() 
+        notification.show()
+
+    #  Culture notification module
+    # while True:   
+    #     time.sleep(10)  # sleep for 5400 seconds
+
+    #     content = getCultureNotification()
+    #     notification = Notify.Notification.new(
+    #         content.type,
+    #         content.info
+    #     )
+    #     notification.set_urgency(0)
+    #     notification.show() 
         
 
     Notify.uninit("Test")
