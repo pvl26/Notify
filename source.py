@@ -1,23 +1,94 @@
 #!/usr/bin/env python3
 
+import random
+import requests
+import bs4
+from bs4 import BeautifulSoup
 import gi
 gi.require_version('Notify', '0.7')
 from gi.repository import Notify
 import os
 import time
 
+class Culture:
+    def getMusic(self):
+        self.type = "Music curiosities:"
+
+        #  data set for the urls used for notifications
+        data_set = ["Nai", "Chitară", "Pian"]
+
+        #  get a randome url source
+        url = "https://ro.wikipedia.org/wiki/" + random.choice(data_set)
+        source = requests.get(url).text
+        bs = BeautifulSoup(source, "lxml")
+
+        #  get the content to put in the notification
+        content = bs.p.text
+
+        self.info = content
+        return self
+
+    def getWoman(self):
+        # TO DO
+
+def getCultureNotification():
+    #  choose randomly the notification type
+    choice = random.choice([0, 1])
+    if choice == 0 :
+        return Culture().getMusic()
+    if choice == 1 :
+        return Culture().getWoman()
+
+    #  TO DO: don't repeat a previous shown notification
+
+
+class Health:
+    def Water(self):
+        self.type = "Hidrate!"
+        self.info = "It's recomended to drink a glass of water every 30 minutes."
+        return self
+
+    def Fruit(self):
+        # TO DO
+
+    def Pause(self):
+        # TO DO
+
 def main():
     Notify.init("Test")
     
-    while True:   
-        notification = Notify.Notification.new(
-            "Notificarea ta din 20 in 20 de secunde", 
-            "┗(＾0＾)┓"   
-        )
-        notification.set_urgency(0)
-        notification.show() 
+    #  Health_Water module
+    # while True:
+    #     time.sleep(10)  # sleep for 1800 seconds
 
-        time.sleep(20)
+    #     content = Health().Water()
+    #     notification = Notify.Notification.new(
+    #         content.type,
+    #         content.info
+    #     )
+    #     notification.set_urgency(0)
+    #     notification.show()
+
+    #  Health_Fruit module
+    while True:
+        # TO DO
+
+    # Health_Pause module
+    while True:
+        # TO DO
+
+    #  Culture notification module
+    # while True:   
+    #     time.sleep(5400)  # sleep for 5400 seconds
+
+    #     content = getCultureNotification()
+    #     notification = Notify.Notification.new(
+    #         content.type,
+    #         content.info
+    #     )
+    #     notification.set_urgency(0)
+    #     notification.show() 
+        
 
     Notify.uninit("Test")
 
