@@ -7,7 +7,7 @@ import bs4
 from bs4 import BeautifulSoup
 import gi
 gi.require_version('Notify', '0.7')
-from gi.repository import Notify, GdkPixbuf
+from gi.repository import Notify,GdkPixbuf
 import os
 import time
 from multiprocessing import Process
