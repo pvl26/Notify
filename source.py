@@ -108,7 +108,7 @@ def getCultureNotification():
 class Health:
     def Water(self):
         self.type = "Hidrate!"
-        self.info = "It's recomended to drink a glass of water every 30 minutes."
+        self.info = "It's recommended to drink a glass of water every 30 minutes."
         return self
 
     def Fruit(self):
