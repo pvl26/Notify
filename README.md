@@ -20,3 +20,10 @@ How to create the service:
 3. Delete service: __`./clean.sh`__  
 
 <b>WARNING</b>: ```service_maker.py``` is not yet ready, don't use untill this message is gone!!!
+
+
+Original Developers
+-------------------
+
+ * Mateescu Pavel-Vlad - [Pvl26](https://github.com/Pvl26)
+ * Dutica Maria-Diana - [DianaDutica](https://github.com/DianaDutica)
