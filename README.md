@@ -1,6 +1,6 @@
 # NotificationProject
 
-A script which sends notifications, currently we only have two classes of notifications:
+A script which sends notifications with custom icons and sound, currently we only have two classes of notifications:
 
  1. Health
     - Notification to take a break from hour to hour
