@@ -18,7 +18,7 @@ How to create the service:
 1. Give permissions: __`chmod +x service_maker.py`__
 2. Run script: sudo __`./service_maker.py`__   
 
-<font color="red">WARNING</font>: ```service_maker.py``` is not yet ready, don't use untill this message is gone!!!
+<p style="color:red"><b>WARNING</b>: ```service_maker.py``` is not yet ready, don't use untill this message is gone!!!</p>
  
 
     For debugging:
