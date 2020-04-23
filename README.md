@@ -33,7 +33,7 @@ You will need to install next packages, some might be already installed in your 
 
 Create an alias: __`alias start='./source.py'`__
 ```diff
-# you need to run this command after every reboot
+# you need to create alias after every reboot
 ```
 
 Service automatization
