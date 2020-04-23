@@ -29,7 +29,12 @@ You will need to install next packages, some might be already installed in your 
 2. notify: __`sudo apt install gir1.2-notify-0.7`__
 3. mpg123: __`sudo apt install mpg123`__                   
 4. beautifoulsoup4: __`sudo apt-get install python3-bs4`__    
-5. lxml: __`sudo apt-get install python3-lxml`__         
+5. lxml: __`sudo apt-get install python3-lxml`__      
+
+Create an alias: __`alias start='./source.py'`__
+```diff
+# you need to run this command after every reboot
+```
 
 Service automatization
 ======================
@@ -40,7 +45,7 @@ How to create the service:
 2. Run script: __`sudo ./service_maker.py`__ 
 3. Delete service: __`./clean.sh`__  
 
-<b>WARNING</b>: ```service_maker.py``` is not yet ready, don't use untill this message is gone!!! Run with __`./source.py &> /dev/null`__ for now.
+<b>WARNING</b>: ```service_maker.py``` is not yet ready, don't use untill this message is gone!!! Run with __`start`__ alias from [Installation](https://github.com/pvl26/NotificationProject/tree/master#installation) for now.
 
 Original Developers
 -------------------
