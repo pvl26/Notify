@@ -23,14 +23,17 @@ def main():
     os.rename("service_source.py", "/usr/local/lib/notifyapp/service_source.py")
  
     #  fill notifyapp.service
-    command = "echo '[Unit]\nDescription=Notification app\n\n[Service]\nEnvironment=DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus\nEnvironment=DISPLAY=:0\nExecStart=/usr/local/lib/notifyapp/service_source.py\n' > notifyapp.service"
+    command = "echo '[Unit]\nDescription=Notification app\n\n[Service]\nEnvironment=DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus\nEnvironment=DISPLAY=:0\nExecStart=/usr/local/lib/notifyapp/service_source.py\n\n[Install]\nWantedBy=default.target' > notifyapp.service"
     os.system(command)
 
     #  move notifyapp.service to /etc/systemd/system
     os.rename("notifyapp.service", "/etc/systemd/system/notifyapp.service")
 
-    #  start notifyapp
-    os.system("systemctl start notifyapp")
+    #  start notifyapp.service
+    os.system("systemctl start notifyapp.service")
+
+    #  enable notifyapp.service
+    os.system("systemctl enable notifyapp.service")
 
 if __name__ == "__main__":
     main() 
