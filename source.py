@@ -166,6 +166,8 @@ def Health_Fruit():
         icon = GdkPixbuf.Pixbuf.new_from_file("./Icons/fruit32.png")
         notification.set_icon_from_pixbuf(icon)
         notification.show()
+        file = "unconvinced.mp3"
+        os.system("mpg123 " + file)
 
     Notify.uninit("Fruit")
 
@@ -185,6 +187,8 @@ def Health_Pause():
         icon = GdkPixbuf.Pixbuf.new_from_file("./Icons/pause32.png")
         notification.set_icon_from_pixbuf(icon)
         notification.show()
+        file = "unconvinced.mp3"
+        os.system("mpg123 " + file)
 
 
     Notify.uninit("Pause")
@@ -205,6 +209,8 @@ def Culture_notification():
         icon = GdkPixbuf.Pixbuf.new_from_file("./Icons/culture32.png")
         notification.set_icon_from_pixbuf(icon)
         notification.show()
+        file = "unconvinced.mp3"
+        os.system("mpg123 " + file)
 
     Notify.uninit("Culture")
 
