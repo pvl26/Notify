@@ -40,7 +40,7 @@ How to create the service:
 2. Run script: __`sudo ./service_maker.py`__ 
 3. Delete service: __`./clean.sh`__  
 
-<b>WARNING</b>: ```service_maker.py``` is not yet ready, don't use untill this message is gone!!!
+<b>WARNING</b>: ```service_maker.py``` is not yet ready, don't use untill this message is gone!!! Run with __`./source.py &> /dev/null`__ for now.
 
 Original Developers
 -------------------
