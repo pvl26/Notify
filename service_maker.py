@@ -21,7 +21,9 @@ def main():
 
     #  move sevice_source.py to /usr/local/lib/notifyapp
     os.rename("service_source.py", "/usr/local/lib/notifyapp/service_source.py")
- 
+    os.system("cp -R Icons/ /usr/local/lib/notifyapp/Icons/")
+    os.system("cp unconvinced.mp3 /usr/local/lib/notifyapp/")
+
     #  fill notifyapp.service
     command = "echo '[Unit]\nDescription=Notification app\n\n[Service]\nEnvironment=DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus\nEnvironment=DISPLAY=:0\nExecStart=/usr/local/lib/notifyapp/service_source.py\n\n[Install]\nWantedBy=default.target' > notifyapp.service"
     os.system(command)
@@ -34,8 +36,6 @@ def main():
 
     #  enable notifyapp.service
     os.system("systemctl enable notifyapp.service")
-
-# sudo loginctl enable-linger $USER
 
 
 if __name__ == "__main__":
