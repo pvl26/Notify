@@ -1,4 +1,4 @@
-# NotificationProject
+# Notify
 
 A script which sends notifications with custom icons and sound, currently we only have two classes of notifications:
 
