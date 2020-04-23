@@ -2,15 +2,15 @@
 
 A script which sends notifications, currently we only have two classes of notifications:
 
-1. Health
-..* Notification to take a break from hour to hour
-..* Notification to drink water once in 30 minutes
-..* Notification eat a fruit once in 1 and a half hours
+ 1. Health
+    - Notification to take a break from hour to hour
+    - Notification to drink water once in 30 minutes
+    - Notification eat a fruit once in 1 and a half hours
 
-2. Culture
-..* Notification with info about music instruments
-..* Notification with info about important women along history
-..* Notification with info about cool destinations
+ 2. Culture
+    - Notification with info about music instruments
+    - Notification with info about important women along history
+    - Notification with info about cool destinations
 
 <p align="center">
 <img src="README/notification.png" width="521">
