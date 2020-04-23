@@ -11,6 +11,10 @@ from gi.repository import Notify,GdkPixbuf
 import os
 import time
 from multiprocessing import Process
+import sys
+
+out = open('/dev/null', 'w')
+sys.stderr = sys.stdout = out
 
 class Culture:
     # method to clear input_str of nested parentheses with stuff in between them
