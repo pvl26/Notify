@@ -141,6 +141,8 @@ def Health_Water():
         icon = GdkPixbuf.Pixbuf.new_from_file("./Icons/water32.png")
         notification.set_icon_from_pixbuf(icon)
         notification.show()
+        file = "unconvinced.mp3"
+        os.system("mpg123 " + file)
     
     Notify.uninit("Water")
 
@@ -179,6 +181,7 @@ def Health_Pause():
         icon = GdkPixbuf.Pixbuf.new_from_file("./Icons/pause32.png")
         notification.set_icon_from_pixbuf(icon)
         notification.show()
+
 
     Notify.uninit("Pause")
 
