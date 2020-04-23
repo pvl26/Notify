@@ -32,6 +32,7 @@ class Culture:
                 ret += i
         return ret
 
+    #  get data for notification
     def getMusic(self):
         self.type = "Music curiosities:"
 
@@ -51,6 +52,7 @@ class Culture:
         self.info = content
         return self
 
+    #  get data for notifications
     def getWoman(self):
         self.type = "Imortant woman:"
 
@@ -70,6 +72,7 @@ class Culture:
         self.info = content
         return self
     
+    #  get data for notifications
     def getDestinations(self):
         self.type = "Beautiful places:"
 
@@ -89,12 +92,12 @@ class Culture:
         self.info = content
         return self
 
-    # TO DO: add more notification content scrapping methods
+    # TO DO(optional update): add more notification content scrapping methods
 
 def getCultureNotification():
     #  choose randomly the notification type
     choice = random.choice([0, 1, 2])
-    # choice = 2
+    
     if choice == 0 :
         return Culture().getMusic()
     if choice == 1 :
@@ -102,9 +105,10 @@ def getCultureNotification():
     if choice == 2 :
         return Culture().getDestinations()
 
-    #  TO DO(optional): don't repeat a previous shown notification
+    #  TO DO(optional update): don't repeat a previous shown notification
 
 
+#  data for health notifications type
 class Health:
     def Water(self):
         self.type = "Hidrate!"
@@ -123,7 +127,7 @@ class Health:
 
 #  Health_Water notification module
 def Health_Water():
-    Notify.init("Test")
+    Notify.init("Water")
 
     while True:
         time.sleep(10)  # sleep for 1800 seconds
@@ -138,11 +142,11 @@ def Health_Water():
         notification.set_icon_from_pixbuf(icon)
         notification.show()
     
-    Notify.uninit("Test")
+    Notify.uninit("Water")
 
 #  Health_Fruit notification module
 def Health_Fruit():
-    Notify.init("Test")
+    Notify.init("Fruit")
 
     while True:
         time.sleep(22)  # sleep for 5400 seconds
@@ -157,11 +161,11 @@ def Health_Fruit():
         notification.set_icon_from_pixbuf(icon)
         notification.show()
 
-    Notify.uninit("Test")
+    Notify.uninit("Fruit")
 
 #  Health_Pause notification module
 def Health_Pause():
-    Notify.init("Test")
+    Notify.init("Pause")
 
     while True:
         time.sleep(47)  # sleep for 3600 seconds
@@ -176,11 +180,11 @@ def Health_Pause():
         notification.set_icon_from_pixbuf(icon)
         notification.show()
 
-    Notify.uninit("Test")
+    Notify.uninit("Pause")
 
 #  Culture notification module
 def Culture_notification():
-    Notify.init("Test")
+    Notify.init("Culture")
 
     while True:   
         time.sleep(55)  # sleep for 10000 seconds
@@ -195,27 +199,27 @@ def Culture_notification():
         notification.set_icon_from_pixbuf(icon)
         notification.show()
 
-    Notify.uninit("Test")
+    Notify.uninit("Culture")
 
 
 def main():
 
-    H_W = Process(target=Health_Water)
-    H_W.start()
+    H_W_process = Process(target=Health_Water)
+    H_W_process.start()
     
-    H_F = Process(target=Health_Fruit)
-    H_F.start()
+    H_F_process = Process(target=Health_Fruit)
+    H_F_process.start()
     
-    H_P = Process(target=Health_Pause)
-    H_P.start()
+    H_P_process = Process(target=Health_Pause)
+    H_P_process.start()
 
-    C = Process(target=Culture_notification)
-    C.start()
+    C_process = Process(target=Culture_notification)
+    C_process.start()
 
-    H_W.join()
-    H_F.join()
-    H_P.join()
-    C.join()
+    H_W_process.join()
+    H_F_process.join()
+    H_P_process.join()
+    C_process.join()
 
 
 
