@@ -4,19 +4,22 @@ Installation
 ============
 You will need to install next packages, some might be already installed in your system
 
-        __`sudo apt install python-gi`__                 #for gi package
-        sudo apt install gir1.2-notify-0.7         #for notify library
-        sudo apt install mpg123                    #for the notification sound
-        sudo apt-get install python3-bs4           #for beautifulsoup package
-        sudo apt-get install python3-lxml          #for lxml package
+1. gi: __`sudo apt install python-gi`__
+2. notify: __`sudo apt install gir1.2-notify-0.7`__
+3. mpg123: __`sudo apt install mpg123`__                   
+4. beautifoulsoup4: __`sudo apt-get install python3-bs4`__    
+5. lxml: __`sudo apt-get install python3-lxml`__         
 
-    How to create the service:
+Service automatization
+======================
 
-        chmod +x service_maker.py
-        sudo ./service_maker.py       #  run without sudo to see what happens
+How to create the service:
 
-    WARNING: the process won't stop, you need to forcefully kill it for now
+1. Give permissions: __`chmod +x service_maker.py`__
+2. Run script: sudo __`./service_maker.py`__   
 
+WARNING: ```service_maker.py``` is not yet ready, don't use untill this message is gone!!!
+ 
 
     For debugging:
     
