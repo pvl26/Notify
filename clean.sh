@@ -1,7 +1,9 @@
 #!/bin/bash
 sudo systemctl reset-failed    #  daca serviciul a dat fail
 
-sudo systemctl stop notifyapp
+sudo systemctl stop notifyapp.service
+
+sudo systemctl disable notifyapp.service
 
 sudo rm /etc/systemd/system/notifyapp.service 
 
