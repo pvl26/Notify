@@ -134,7 +134,7 @@ def Health_Water():
     Notify.init("Water")
 
     while True:
-        time.sleep(10)  # sleep for 1800 seconds
+        time.sleep(1800)  # sleep for 1800 seconds
 
         content = Health().Water()
         notification = Notify.Notification.new(
@@ -155,7 +155,7 @@ def Health_Fruit():
     Notify.init("Fruit")
 
     while True:
-        time.sleep(22)  # sleep for 5400 seconds
+        time.sleep(5400)  # sleep for 5400 seconds
 
         content = Health().Fruit()
         notification = Notify.Notification.new(
@@ -176,7 +176,7 @@ def Health_Pause():
     Notify.init("Pause")
 
     while True:
-        time.sleep(47)  # sleep for 3600 seconds
+        time.sleep(3600)  # sleep for 3600 seconds
 
         content = Health().Pause()
         notification = Notify.Notification.new(
@@ -198,7 +198,7 @@ def Culture_notification():
     Notify.init("Culture")
 
     while True:   
-        time.sleep(55)  # sleep for 10000 seconds
+        time.sleep(10000)  # sleep for 10000 seconds
 
         content = getCultureNotification()
         notification = Notify.Notification.new(
