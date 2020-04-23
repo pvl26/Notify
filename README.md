@@ -16,19 +16,7 @@ Service automatization
 How to create the service:
 
 1. Give permissions: __`chmod +x service_maker.py`__
-2. Run script: sudo __`./service_maker.py`__   
+2. Run script: __`sudo ./service_maker.py`__ 
+3. Delete service: __`./clean.sh`__  
 
 <b>WARNING</b>: ```service_maker.py``` is not yet ready, don't use untill this message is gone!!!
-___ 
-
-    For debugging:
-    
-        ./clean.sh      #  sterge serviciul si toate fisierele generate pentru el
-        sudo ./service_maker.py     
-        
-        sudo systemctl daemon-reload 
-        sudo systemctl start notifyapp.service
-        sudo systemctl status notifyapp.service
-        
-
-might left an easter egg
