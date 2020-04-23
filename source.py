@@ -146,7 +146,7 @@ def Health_Water():
         notification.set_icon_from_pixbuf(icon)
         notification.show()
         file = "unconvinced.mp3"
-        os.system("mpg123 " + file)
+        os.system("mpg123 " + file + " 2> /dev/null")
     
     Notify.uninit("Water")
 
@@ -167,7 +167,7 @@ def Health_Fruit():
         notification.set_icon_from_pixbuf(icon)
         notification.show()
         file = "unconvinced.mp3"
-        os.system("mpg123 " + file)
+        os.system("mpg123 " + file + " 2> /dev/null")
 
     Notify.uninit("Fruit")
 
@@ -188,7 +188,7 @@ def Health_Pause():
         notification.set_icon_from_pixbuf(icon)
         notification.show()
         file = "unconvinced.mp3"
-        os.system("mpg123 " + file)
+        os.system("mpg123 " + file + " 2> /dev/null")
 
 
     Notify.uninit("Pause")
@@ -210,7 +210,7 @@ def Culture_notification():
         notification.set_icon_from_pixbuf(icon)
         notification.show()
         file = "unconvinced.mp3"
-        os.system("mpg123 " + file)
+        os.system("mpg123 " + file + " 2> /dev/null")
 
     Notify.uninit("Culture")
 
