@@ -12,6 +12,12 @@ A script which sends notifications, currently we only have two classes of notifi
 ..* Notification with info about important women along history
 ..* Notification with info about cool destinations
 
+<p align="center">
+<img src="README/notification.png" width="521">
+<img src="README/notification_list.png" width="789">
+</p>
+
+
 Anyone can add more methods for any type of notifications, geting the information is based on webscraping from wikipedia or any other site.
 
 
