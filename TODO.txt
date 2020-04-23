@@ -2,18 +2,10 @@
 
 
         TODO:
-
-            Automate with a daemon
-
-
-###############################################################################
-
-
-        TODO:
-
-            Work on notifications, arlgorithm
-
         
+            See why service is not working properly
+            
+            
 ###############################################################################
 
 
@@ -22,14 +14,6 @@
             Make a top bar menu thingie for custom notifications 
 
             ex: set a notification for 45 mins when the cookies are done  
-
-
-###############################################################################
-
-
-        TODO: 
-
-            Polish it up in a pkg
 
 
 ###############################################################################
