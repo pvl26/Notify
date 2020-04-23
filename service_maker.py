@@ -35,5 +35,8 @@ def main():
     #  enable notifyapp.service
     os.system("systemctl enable notifyapp.service")
 
+# sudo loginctl enable-linger $USER
+
+
 if __name__ == "__main__":
     main() 
