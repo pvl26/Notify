@@ -1,9 +1,14 @@
 # NotificationProject
 
-    Installing the requirements:
+Installation
+============
+You will need to install next packages, some might be already installed in your system
 
-        sudo apt install python-gi                 #for gi package
+        __`sudo apt install python-gi`__                 #for gi package
         sudo apt install gir1.2-notify-0.7         #for notify library
+        sudo apt install mpg123                    #for the notification sound
+        sudo apt-get install python3-bs4           #for beautifulsoup package
+        sudo apt-get install python3-lxml          #for lxml package
 
     How to create the service:
 
