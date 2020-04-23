@@ -42,8 +42,8 @@ Service automatization
 How to create the service:
 
 1. Give permissions: __`chmod +x service_maker.py`__
-2. Run script: __`sudo ./service_maker.py`__ 
-3. Delete service: __`./clean.sh`__  
+2. Create & Start service: __`sudo ./service_maker.py`__ 
+3. Stop & Delete service: __`./clean.sh`__  
 
 <b>WARNING</b>: ```service_maker.py``` is not yet ready, don't use untill this message is gone!!! Run with __`start`__ alias from [Installation](https://github.com/pvl26/NotificationProject/tree/master#installation) for now.
 
